@@ -1,4 +1,4 @@
-# 使用lets encrypt免费升级到https 
+# 使用letsencrypt免费升级到https 
 环境为 Ubuntu Server 16.04 和 Nginx，具体可参考[官网](https://certbot.eff.org/)
 
 ## 安装依赖
@@ -7,7 +7,11 @@
 
 ## 下载certbot
 1. git clone https://github.com/certbot/certbot.git
-2. cd certbot
+2. cd certbot  
+  
+letsencrypt是certbot以前的名称，github的地址也重定向到certbot了。  
+
+>Certbot, previously the Let's Encrypt Client, is EFF's tool to obtain certs from Let's Encrypt, and (optionally) auto-enable HTTPS on your server. It can also act as a client for any other CA that uses the ACME protocol.
 
 ## 不重启获取证书
 `./certbot-auto certonly --webroot -w /var/www/your-project-dir -d your-domain.com -d another-domain.com`  
@@ -47,3 +51,24 @@ server {
 
 ## 到期自动更新  
 `certbot renew --dry-run`
+
+## 待解决问题
+
+```
+WARNING: unable to check for updates.
+Creating virtual environment...
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/virtualenv.py", line 2363, in <module>
+    main()
+  File "/usr/lib/python3/dist-packages/virtualenv.py", line 719, in main
+    symlink=options.symlink)
+  File "/usr/lib/python3/dist-packages/virtualenv.py", line 988, in create_environment
+    download=download,
+  File "/usr/lib/python3/dist-packages/virtualenv.py", line 918, in install_wheel
+    call_subprocess(cmd, show_stdout=False, extra_env=env, stdin=SCRIPT)
+  File "/usr/lib/python3/dist-packages/virtualenv.py", line 812, in call_subprocess
+    % (cmd_desc, proc.returncode))
+OSError: Command /root/.local/share/letsencrypt/bin/python2.7 - setuptools pkg_resources pip wheel failed with error code 2
+```
+有说是pip版本的问题，现在升级到最新版本也无用，正在解决。  (2017年4月6日23:23:36)
+临时解决的方式，可以apt安装letscrypt，然后使用`letscrypt certonly -w /your-project-dir -d your-domain.com`安装证书，然后配置证书。

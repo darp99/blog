@@ -1,5 +1,5 @@
 # 返回顶部的JS代码  
-[具体代码实现](front-end/js-gotop-code)
+[具体代码实现](https://github.com/isLishude/blog/tree/master/front-end/js-gotop-code)
 
 ```html
 <!DOCTYPE html>

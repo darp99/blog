@@ -7,8 +7,8 @@ sudo apt-get install curl openssh-server ca-certificates postfix
 curl -sS https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash
 
 ## 网络不好的选项
-在 https://packages.gitlab.com/gitlab/gitlab-ce 找到你的版本号
-sudo curl -LJO <url>
+在 https://packages.gitlab.com/gitlab/gitlab-ce 找到你的版本号  
+sudo curl -LJO <url>  
 sudo dpkg -i gitlab-ce-XXX.deb
 
 ## 更新源以及安装

@@ -4,6 +4,7 @@ This is my study notes,include linux Nginx Mysql PHP JavaScript.
 1. [倒计时HTML](front-end/countdown.md)
 2. [返回顶部](front-end/gotop.md)
 3. [File API](front-end/file-api.md)
+4. [Copy API](front-end/copy-api.md)
 
 ## Nodejs
 1. [在Ubuntu上编译安装 Nodejs](nodejs/install-nodejs.md)  

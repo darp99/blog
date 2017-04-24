@@ -1,7 +1,7 @@
 # install on Ubuntu
 
 ## download the source code from nodejs
-[choose the newest Node](https://nodejs.org/en/download/current/),copy the url,and run like this: `wget https://nodejs.org/dist/v7.8.0/node-v7.8.0.tar.gz'.  
+[choose the newest Node](https://nodejs.org/en/download/current/),copy the url,and run like this: `wget https://nodejs.org/dist/v7.8.0/node-v7.8.0.tar.gz`.  
 
 ## install dependencies
 1. sudo apt-get install python2.7 #install python2

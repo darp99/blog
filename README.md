@@ -6,11 +6,11 @@ This is my study notes,include linux Nginx Mysql PHP JavaScript.
 3. [File API](front-end/file-api.md)
 4. [Copy API](front-end/copy-api.md)
 5. [CSS3制作导航分割线](front-end/css3-nav.md)
-6. [node-glob语法](front-end/node-glob.md)  
-7. [Datalist实现搜索提示框](front-end/datalist.md)
+6. [Datalist实现搜索提示框](front-end/datalist.md)
 
 ## Nodejs
 1. [在Ubuntu上编译安装 Nodejs](nodejs/install-nodejs.md)  
+2. [node-glob语法](front-end/node-glob.md)  
 
 ## Linux
 1. [在Windows虚拟机上安装UbuntuServer](linux/deploy-ubuntu-on-windows.md)

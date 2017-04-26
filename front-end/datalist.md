@@ -1,7 +1,7 @@
 ## 说明
 代码来源于张鑫旭大神的博客  
 ## 代码示例
-```
+```html
 <!DOCTYPE html>
 <html>
 
@@ -11,16 +11,17 @@
 </head>
 
 <body>
-    <!--input 元素添加 list 属性即可-->
+    <!--input 元素绑定 list 属性即可-->
     <input type="email" id="email" list="emailList" name="off_autocomplete" />
     <datalist id="emailList">
         <!-- add by lishude
             option 元素加入“/”结尾可以让一些IDE代码格式化正常 -->
-        <option value="*@qq.com" />
-        <option value="*@163.com" />
-        <option value="*@gmail.com" />
-        <option value="*@yahoo.com.cn" />
-        <option value="*@126.com" />
+        <!--加入label属性可以设置说明-->
+        <option label="qq邮箱" value="*@qq.com" />
+        <option label="163邮箱" value="*@163.com" />
+        <option label="Gmail邮箱" value="*@gmail.com" />
+        <option label="阿里云邮箱" value="*@aliyun.com" />
+        <option label="126邮箱" value="*@126.com" />
     </datalist>
     <script>
         var eleList = document.getElementById("emailList")

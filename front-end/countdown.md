@@ -1,6 +1,6 @@
 倒计时HTML参考代码
 
-```
+```html
 <!DOCTYPE html>
 <html>
 

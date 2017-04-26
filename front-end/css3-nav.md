@@ -1,5 +1,5 @@
 # code
-```
+```html
 <!doctype html>
 <html lang="en">
 

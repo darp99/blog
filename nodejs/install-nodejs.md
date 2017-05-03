@@ -13,8 +13,9 @@
 8. make
 9. sudo make install 
 
+**编译安装较慢，建议使用下面的方式**  
+
 # 使用 node 管理工具安装
-## 下载 nodejs 和 npm
 1. sudo apt install nodejs-legacy //ubuntu 仓库默认安装的是低版本的的 nodejs
 2. sudo apt install npm //安装npm也是低版本的
 3. sudo npm install -g n

@@ -7,6 +7,9 @@
 3. 继续运行`sudo update-manager -c -d`
 4. 按照提示操作即可，中途有几处需要确认。
 
+## Ubuntu server update
+run `do-release-upgrade`  
+
 ## ubuntu wiki
 To upgrade on a desktop system:
 - Open the "Software & Updates" Setting in System Settings.

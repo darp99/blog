@@ -2,7 +2,9 @@
 
 假设有一个表单，用于用户选取图片。
 
-`<input type="file" name="picture" accept="image/png, image/jpeg"/>`
+```html
+<input type="file" name="picture" accept="image/png, image/jpeg"/>
+```
 
 一旦用户选中图片，将其显示在canvas的函数可以这样写：
 ```js

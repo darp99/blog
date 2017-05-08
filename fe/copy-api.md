@@ -27,21 +27,22 @@
     </div>
 
     <script type="text/javascript">
-        //不支持IE浏览器
+        //不支持IE浏览器，火狐浏览器兼容中。。
         var btn = document.getElementById('btn');
         btn.addEventListener('click', function () {
             var inputText = document.getElementById('inputText');
             //var currentFocus = document.activeElement;
-        //焦点定位到input
+            //焦点定位到input
             inputText.focus();
             //选择input的文字范围，参数第一个为起始位置，第二个为最后位置的下一个
+            //也可以使用inputText.select();
             inputText.setSelectionRange(0, inputText.value.length);
             //document.execCommand返回bool
             if (document.execCommand('copy', true)) {
-                alert('copy succeed!')
+                alert('复制成功！')
                 // currentFocus.focus();
             } else {
-                alert('copy failed,have try please!');
+                alert('复制失败，请使用Chrome浏览器继续操作');
             }
 
         });

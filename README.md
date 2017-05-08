@@ -7,6 +7,7 @@ This is my study notes,include linux Nginx Mysql PHP JavaScript.
 4. [Copy API](front-end/copy-api.md)
 5. [CSS3制作导航分割线](front-end/css3-nav.md)
 6. [Datalist实现搜索提示框](front-end/datalist.md)
+7. [显示用户选取(拖拽或粘贴)的本地图片](front-end/drag-paster-file.md)
 
 ## Nodejs
 1. [在Ubuntu上编译安装 Nodejs](nodejs/install-nodejs.md)  

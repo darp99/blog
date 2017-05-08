@@ -1,17 +1,18 @@
 # About
 This is my study notes,include linux Nginx Mysql PHP JavaScript.
-## Front-end
-1. [倒计时HTML](front-end/countdown.md)
-2. [返回顶部](front-end/gotop.md)
-3. [File API](front-end/file-api.md)
-4. [Copy API](front-end/copy-api.md)
-5. [CSS3制作导航分割线](front-end/css3-nav.md)
-6. [Datalist实现搜索提示框](front-end/datalist.md)
-7. [显示用户选取(拖拽或粘贴)的本地图片](front-end/drag-paste-file.md)
+## fe
+1. [倒计时HTML](fe/countdown.md)
+2. [返回顶部](fe/gotop.md)
+3. [File API](fe/file-api.md)
+4. [Copy API](fe/copy-api.md)
+5. [CSS3制作导航分割线](fe/css3-nav.md)
+6. [Datalist实现搜索提示框](fe/datalist.md)
+7. [显示用户选取(拖拽或粘贴)的本地图片](fe/drag-paste-file.md)
+8. [css魔法：gulp api 4.0文档](fe/gulp-api.md)
 
 ## Nodejs
 1. [在Ubuntu上编译安装 Nodejs](nodejs/install-nodejs.md)  
-2. [node-glob语法](front-end/node-glob.md)  
+2. [node-glob语法](nodejs/node-glob.md)  
 
 ## Linux
 1. [在Windows虚拟机上安装UbuntuServer](linux/deploy-ubuntu-on-windows.md)
@@ -26,3 +27,6 @@ This is my study notes,include linux Nginx Mysql PHP JavaScript.
 
 ## Nginx
 1. [搭建 laravel 生产环境](linux/lnmp.md)
+
+## Reader
+1. [物联网是前端工程师的新蓝海吗?](reader/iot-fe-chance.md)

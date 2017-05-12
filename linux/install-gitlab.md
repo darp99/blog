@@ -8,7 +8,8 @@
 ## 添加gitlab源
 curl -sS https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash
 
-## 网络不好的选项
+**网络不好的选项**  
+
 在 [这里](https://packages.gitlab.com/gitlab/gitlab-ce) 找到你的版本号并替换下面 url  
 `sudo curl -LJO <url>`  
 `sudo dpkg -i gitlab-ce-XXX.deb`

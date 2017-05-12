@@ -20,24 +20,24 @@ function readFile(file){
     applyDataUrlToCanvas( reader.result );
   };
 
-  reader.reaAsDataURL(file);
+  reader.readAsDataURL(file);
 }
 ```
 
 还可以在canvas上面定义拖放事件，允许用户直接拖放图片到上面。  
 
 ```js
-// stop FireFox from replacing the whole page with the file.
-canvas.ondragover = function () { return false; };
+  // stop FireFox from replacing the whole page with the file.
+  canvas.ondragover = function () { return false; };
 
-// Add drop handler
-canvas.ondrop = function (e) {
-//阻止浏览器默认打开图片事件以及冒泡
+  // Add drop handler
+  canvas.ondrop = function (e) {
+  //对event进行兼容处理
+  e = e || window.event;
+  //阻止浏览器默认打开图片事件以及冒泡
   e.stopPropagation();
   e.preventDefault(); 
-//对event进行兼容处理
-  e = e || window.event;
-//drag 事件包含dataTransfer属性，files属性可以获得所有文件列表
+  //drag 事件包含dataTransfer属性，files属性可以获得所有文件列表
   var files = e.dataTransfer.files;
   if(files){
     readFile(files[0]);

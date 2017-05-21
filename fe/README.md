@@ -13,6 +13,7 @@
 - [CSS3制作导航分割线](css/css3-nav.md)
 - [CSS 代码编写规范](css/css-coding-guide.md)
 - [去除 inline-block 元素间空格的方式](css/inline-block-whitespace.md)
+- [三种方式实现水平垂直居中](css/center-middle.md)
 
 ### HTML
 - [Datalist实现搜索提示框](html/datalist.md)

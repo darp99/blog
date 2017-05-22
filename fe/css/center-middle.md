@@ -124,3 +124,59 @@
 
 </html>
 ```
+
+## 使用绝对定位
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>绝对定位垂直居中对齐</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        .main {
+            position: relative;
+            height: 100%;
+            /*margin-top: -50%;*/
+        }
+
+        .item {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            top: 50%;
+            left: 50%;
+            /*使用top以及left后元素左上角点定位到中心位置，使用
+            * margin使其元素的中心定位到中心位置，如下图所示
+            */
+            margin-left: -50px;
+            margin-top: -50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="item">
+            center text!
+        </div>
+    </div>
+
+</body>
+
+</html>
+```
+
+![css Absolute绝对定位居中例子](https://cloud.githubusercontent.com/assets/24730006/26290880/4886c390-3edd-11e7-8585-15c5da632413.jpg)

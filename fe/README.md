@@ -3,6 +3,7 @@
 - [倒计时HTML](js/countdown.md)
 - [返回顶部](js/gotop.md)
 - [JS原声实现对象拷贝和扩展](js/clone-extend-obj.md)
+- [获取元素样式](css/get-style.md)
 
 ### Web API
 - [File API](webapi/file-api.md)
@@ -17,6 +18,7 @@
 - [双飞翼布局示例](css/holy-layout.md)
 - [css布局以及动画等收集](css/css3-collections.md)
 - [:before和::before的区别](css/css-before.md)
+
 
 ### HTML
 - [Datalist实现搜索提示框](html/datalist.md)

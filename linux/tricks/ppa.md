@@ -8,6 +8,12 @@ PPA的一般形式是
 ppa:user/ppa-name  
 ```
 
+添加之前请确定已经安装 Python 以及必要依赖：
+
+```
+sudo apt-get install software-properties-common
+```
+
 添加PPA源的命令为：
 
 ```
@@ -19,7 +25,7 @@ sudo add-apt-repository ppa:user/ppa-name
 例如，要添加一个用户名为 eugenesan 到java源中，则命令为
 
 ```
-sudo add-apt-repository ppa:eugenesan/java
+sudo add-apt-repository ppa:certbot/certbot
 ```
 
 添加好更新一下： 
@@ -27,6 +33,8 @@ sudo add-apt-repository ppa:eugenesan/java
 ```
 sudo apt-get update
 ```
+
+然后就可以运行 `sudo apt install certbot` 安装了。
 
 删除命令格式则为：
 

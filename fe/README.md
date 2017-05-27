@@ -3,7 +3,8 @@
 - [倒计时HTML](js/countdown.md)
 - [返回顶部](js/gotop.md)
 - [JS原声实现对象拷贝和扩展](js/clone-extend-obj.md)
-- [获取元素样式](css/get-style.md)
+- [获取元素样式](js/get-style.md)
+- [获取垂直滚动距离](js/get-scroll-top.md)
 
 ### Web API
 - [File API](webapi/file-api.md)

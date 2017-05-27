@@ -15,6 +15,7 @@
 - [去除 inline-block 元素间空格的方式](css/inline-block-whitespace.md)
 - [三种方式实现水平垂直居中](css/center-middle.md)
 - [双飞翼布局示例](css/holy-layout.md)
+- [css布局以及动画等收集](css/css3-collections.md)
 
 ### HTML
 - [Datalist实现搜索提示框](html/datalist.md)

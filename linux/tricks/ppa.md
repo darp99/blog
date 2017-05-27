@@ -22,7 +22,7 @@ sudo add-apt-repository ppa:user/ppa-name
 
 也可以打开【软件中心】->【软件源】->【其他软件】，选择添加，在弹出的窗口中AT行里输入ppa:user/ppa-name 格式的内容。
 
-例如，要添加一个用户名为 eugenesan 到java源中，则命令为
+例如，要添加一个用户名为 certbot 的 certbot 源中，则命令为
 
 ```
 sudo add-apt-repository ppa:certbot/certbot

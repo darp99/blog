@@ -29,3 +29,4 @@
 
 ## Outlook
 - [You Don't Need jQuery](https://github.com/oneuijs/You-Dont-Need-jQuery/blob/master/README.zh-CN.md)
+- [We have a problem with Promise](http://fex.baidu.com/blog/2015/07/we-have-a-problem-with-promises/)

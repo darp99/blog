@@ -5,6 +5,7 @@
 - [JS原声实现对象拷贝和扩展](js/clone-extend-obj.md)
 - [获取元素样式](js/get-style.md)
 - [获取垂直滚动距离](js/get-scroll-top.md)
+- [jQuery锚点滚动导航菜单](js/scroll-nav.md)
 
 ### Web API
 - [File API](webapi/file-api.md)

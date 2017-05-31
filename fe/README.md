@@ -18,9 +18,8 @@
 - [去除 inline-block 元素间空格的方式](css/inline-block-whitespace.md)
 - [三种方式实现水平垂直居中](css/center-middle.md)
 - [双飞翼布局示例](css/holy-layout.md)
-- [css布局以及动画等收集](css/css3-collections.md)
 - [:before和::before的区别](css/css-before.md)
-- [min-height 总结](css/min-height.md)
+- [min-height以及百分比大小的解析](css/min-height.md)
 
 
 ### HTML

@@ -20,6 +20,7 @@
 - [双飞翼布局示例](css/holy-layout.md)
 - [:before和::before的区别](css/css-before.md)
 - [min-height以及百分比大小的解析](css/min-height.md)
+- [CSS3实现跑马灯效果](css/css3-marque.md)
 
 
 ### HTML

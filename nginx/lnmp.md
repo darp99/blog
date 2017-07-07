@@ -10,8 +10,9 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8 
 ```
 ## 安装所有依赖
-`sudo apt install git vim php7.0-mysql php7.0-fpm php7.0-curl php7.0-xml php7.0-mcrypt php7.0-json php7.0-gd php7.0-mbstring php7.0-curl php7.0-zip php mysql-server nginx -y`
+`sudo apt install git vim php7.1-mysql php7.1-fpm php7.1-curl php7.1-xml php7.1-mcrypt php7.1-json php7.1-gd php7.1-mbstring php7.1-curl php7.1-zip php mysql-server nginx -y`
 
+安装PHP7.1需要PPA第三方源支持，具体参考[这篇文章](https://github.com/isLishude/blog/blob/master/PHP/install-php7.1.md)
 ## 安装Git和Vim  
 `sudo apt-get install git vim -y`
 
@@ -21,7 +22,7 @@ export LC_ALL=en_US.UTF-8
 **查看php版本：**`php -v`
 
 ## 安装 php7-lib  
-`sudo apt-get install php7.0-mysql php7.0-fpm php7.0-curl php7.0-xml php7.0-mcrypt php7.0-json php7.0-gd php7.0-mbstring php7.0-curl php7.0-zip -y`
+`sudo apt-get install php7.1-mysql php7.1-fpm php7.1-curl php7.1-xml php7.1-mcrypt php7.1-json php7.1-gd php7.1-mbstring php7.1-curl php7.1-zip -y`
 
 **注意：** php-zip 包，composer特别需要！
 
@@ -44,11 +45,11 @@ service mysql restart
 
 ## 配置 PHP  
 **php-fpm配置**  
-`sudo vim /etc/php/7.0/fpm/pool.d/www.conf  `  
-`listen = /var/run/php/php7.0-fpm.sock`
+`sudo vim /etc/php/7.1/fpm/pool.d/www.conf  `  
+`listen = /var/run/php/php7.1-fpm.sock`
 
 **URL安全配置**  
-`sudo vim /etc/php/7.0/fpm/php.ini`   
+`sudo vim /etc/php/7.1/fpm/php.ini`   
 `/cgi.fix_pathinfo = 0`  
 
 ## 配置 Nginx
@@ -70,7 +71,7 @@ server {
        location ~ \.php$ {
                 try_files $uri /index.php =404;
                 fastcgi_split_path_info ^(.+\.php)(/.+)$;
-                fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
+                fastcgi_pass unix:/var/run/php/php7.1-fpm.sock;
                 fastcgi_index index.php;
                 fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
                 include fastcgi_params;
@@ -96,7 +97,7 @@ text/xml application/xml application/xml+rss text/javascript;
 
 ## 重启服务
 `sudo service nginx restart`  
-`sudo service php7.0-fpm restart`  
+`sudo service php7.1-fpm restart`  
 
 ## Composer
 

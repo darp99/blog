@@ -13,6 +13,7 @@
 ## 云服务器
 1. [阿里云添加ppa源403错误解决方式](cloud/aliyun-ppa-problem.md)
 2. [升级到https](cloud/update-https-service.md)  
+3. [使用公私钥登录远程服务器](cloud/ssh-login.md)
 
 ## 软件部署
 1. [安装使用 gitlab 进行内部代码管理](software/install-gitlab.md)

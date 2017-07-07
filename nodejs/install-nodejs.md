@@ -24,7 +24,57 @@
 6. npm config get registry //测试 npm 镜像
 7. npm install npm@latest //升级npm到最新版本
 
+## 使用[nvm](https://github.com/creationix/nvm#install-script)
+
+### 下载NVM
+```
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
+#或者
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
+```
+### 添加命令
+```shell
+cd ~/.bashrc
+# or ~/.bash_profile, ~/.zshrc, ~/.profile
+export NVM_DIR="$HOME/.nvm" [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+# 验证安装
+command -v nvm
+```
+### 安装Node
+```shell
+# latest version
+nvm install node
+# stable version
+nvm install stable
+```
+## [deb包进行安装](https://nodejs.org/en/download/package-manager/)
+
+```shell
+# stable version
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+sudo apt-get install -y nodejs
+# latest version
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+**注意：**6.0稳定版本，我安装的时候这个没有npm，命令是 nodejs 开头的。最新版本没有这个问题。 
+
 # 国内npm镜像设置
 1. 临时使用：`npm --registry https://registry.npm.taobao.org install PACKAGE-NAME`
 2. 永久设置：`npm config set registry https://registry.npm.taobao.org`
 3. cnpm包：`npm install -g cnpm --registry=https://registry.npm.taobao.org`
+
+## 官方镜像
+npm config set registry https://registry.npmjs.org/
+
+# npm避免系统权限
+默认情况下，全局模块都安装在系统目录（比如/usr/local/lib/），普通用户没有写入权限，需要用到sudo命令。
+
+可以在用户目录下新建配置文件`.npmrc`，然后创建npm目录，把PATH添加到这里即可
+```
+cd ~
+vim .npmrc
+prefix = /home/yourUsername/npm
+mkdir ~/npm
+export PATH=~/npm/bin:$PATH
+```

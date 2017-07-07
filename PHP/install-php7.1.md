@@ -1,5 +1,5 @@
 # 安装php7.1
-有Ubuntu官方仓库PHP还停留在7.1时代，而PHP官方已经推荐使用PHP7.1，所以为了保证安全和减少Bug，推荐大家使用PHP7.1
+有Ubuntu官方仓库PHP还停留在7.0时代，而PHP官方已经推荐使用PHP7.1，所以为了保证安全和减少Bug，推荐大家使用[PHP7.1](https://launchpad.net/~ondrej/+archive/ubuntu/php)。
 
 ```shell
 sudo add-apt-repository ppa:ondrej/php

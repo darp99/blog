@@ -3,6 +3,7 @@
 ## 目录
 - [前端](fe/README.md)
 - [NodeJS](nodejs/README.md)
+- [PHP](php/README.md)
 - [Nginx](nginx/README.md)
 - [Linux](linux/README.md)
 - [Docker](docker/README.md)

@@ -1,12 +1,13 @@
 ## 关于
-阿德的技术日志
+阿德的技术日志，所有的内容在 `issues` 中发布。
+
 ## 目录
-- [前端](fe/README.md)
-- [NodeJS](nodejs/README.md)
-- [PHP](PHP/README.md)
-- [Nginx](nginx/README.md)
-- [Linux](linux/README.md)
-- [Docker](docker/README.md)
-- [职业生涯](career/README.md)
-- [Git](git/readme.md)
-- [区块链](blockchain/README.md)
+- [前端](https://github.com/isLishude/blog/labels/Front-end)
+- [NodeJS](https://github.com/isLishude/blog/labels/NodeJS)
+- [PHP](https://github.com/isLishude/blog/labels/PHP)
+- [Nginx](https://github.com/isLishude/blog/labels/nginx)
+- [Linux](https://github.com/isLishude/blog/labels/Linux)
+- [Docker](https://github.com/isLishude/blog/labels/Docker)
+- [职业生涯](https://github.com/isLishude/blog/labels/Career)
+- [Git](https://github.com/isLishude/blog/labels/Git)
+- [区块链](https://github.com/isLishude/blog/labels/lockchain)

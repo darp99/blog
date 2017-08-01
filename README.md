@@ -10,4 +10,4 @@
 - [Docker](https://github.com/isLishude/blog/labels/Docker)
 - [职业生涯](https://github.com/isLishude/blog/labels/Career)
 - [Git](https://github.com/isLishude/blog/labels/Git)
-- [区块链](https://github.com/isLishude/blog/labels/lockchain)
+- [区块链](https://github.com/isLishude/blog/labels/blockchain)

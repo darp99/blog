@@ -1,5 +1,5 @@
 ## 关于
-阿德的技术日志，所有的内容在 `issues` 中发布。
+阿德的技术日志，所有的内容在 [Issues](https://github.com/isLishude/blog/issues) 中发布。
 
 ## 目录
 - [前端](https://github.com/isLishude/blog/labels/%E5%89%8D%E7%AB%AF)

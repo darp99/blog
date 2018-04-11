@@ -10,7 +10,7 @@
 - [Linux](https://github.com/isLishude/blog/labels/Linux)
 - [Docker](https://github.com/isLishude/blog/labels/Docker)
 - [区块链](https://github.com/isLishude/blog/labels/Blockchain)
-- [归档](https://github.com/isLishude/blog/labels/%E5%BD%92%E6%A1%A3)
+- [归档](https://github.com/isLishude/blog/issues?q=is%3Aissue+is%3Aclosed)
 
 ## 转载声明
 

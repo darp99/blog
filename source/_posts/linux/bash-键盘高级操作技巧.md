@@ -4,6 +4,7 @@ categories:
   - Linux
 date: 2018-05-19 22:40:43
 tags:
+  - bash
 ---
 
 ### 移动光标

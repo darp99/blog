@@ -4,6 +4,7 @@ categories:
   - Linux
 date: 2018-05-19 22:43:02
 tags:
+  - ubuntu
 ---
 
 通常新建用户会遇到很多问题，比如 shell 不支持 tab 提示，下述流程解决了常见新建用户出现的问题。

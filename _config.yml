@@ -1,7 +1,7 @@
 title: Lishude's Web Note
 subtitle: Node.js/Blockchain/Go
 description: 李书德的网络日志
-keywords: 
+keywords: blog
 author: Lishude
 language: zh_CN
 timezone: UTC
@@ -58,4 +58,4 @@ theme: landscape
 deploy:
   type: git
   repo: https://github.com/isLishude/blog
-  branch: master
+  branch: web

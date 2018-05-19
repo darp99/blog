@@ -7,7 +7,7 @@ language: zh_CN
 timezone: UTC
 
 url:  https://islishude.github.io/blog/
-root: /blog
+root: /blog/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 

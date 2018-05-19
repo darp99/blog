@@ -58,4 +58,4 @@ theme: landscape
 deploy:
   type: git
   repo: https://github.com/isLishude/blog
-  branch: web
+  branch: master

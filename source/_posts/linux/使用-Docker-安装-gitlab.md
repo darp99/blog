@@ -80,5 +80,11 @@ volumes:
 ![image](https://user-images.githubusercontent.com/24730006/33828817-8b77684c-dea8-11e7-81fd-8977f4d0025f.png)
 
 ## TODO
- - [ ] ssh 问题
+ - [x] ssh 问题
 
+添加这行到 gitlab.rb ，定义 git ssh 端口，同时在服务器开启这个端口的访问权限。
+
+```
+# git ssh config
+gitlab_rails['gitlab_shell_ssh_port'] = 2222
+```

@@ -70,6 +70,18 @@ sudo systemctl restart docker
 
 这样做之后，直接可以运行`docker images`等命令再也不需要root权限了。
 
+# docker-compose
+
+```
+## install
+sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+## update
+docker-compose migrate-to-labels
+## uninstall
+sudo rm /usr/local/bin/docker-compose
+```
 
 # Docker tips
 

@@ -6,6 +6,41 @@ date: 2019-01-23 10:23:19
 tags:
 ---
 
+## 不要在同步函数使用 await
+
+async/await 可以接受同步函数，相当于 `await Promise.resolve` ，今天在个异步流程中发现一个同步函数使用了 await ，结果上没什么区别，但是会有性能损失。
+
+```js
+async function t1() {
+  const data = [1, 2, 3];
+  const res = await data.map(val => val ** 2);
+  return res;
+}
+
+async function t2() {
+  const data = [1, 2, 3];
+  const res = data.map(val => val ** 2);
+  return res;
+}
+
+console.time(1);
+t1().then(res => console.log(res));
+console.timeEnd(1);
+
+console.time(2);
+t2().then(res => console.log(res));
+console.timeEnd(2);
+```
+
+性能对比： 
+
+```
+1: 0.121ms
+2: 0.055ms
+[ 1, 4, 9 ]
+[ 1, 4, 9 ]
+```
+
 ## 不要使用 `return await fn()`
 
 最近评审代码发现 `return await fn()` 这样的写法。其实这样写是多于的。

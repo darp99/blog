@@ -6,7 +6,7 @@
     "version": "3.8.0"
   },
   "scripts": {
-    "pub": "rm -rf .deploy_git public && hexo deploy"
+    "pub": "hexo d -g"
   },
   "dependencies": {
     "hexo": "^3.2.0",

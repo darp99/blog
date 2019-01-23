@@ -7,12 +7,9 @@ tags:
   - Docker
 ---
 
->Docker是世界领先的软件容器平台。 开发者可以通过 Docker 解决协作时环境不一致的问题。 运维人员可以使用 Docker 在容器中运行和管理应用程序，以获得更好的计算密度。 企业可以使用 Docker 构建敏捷软件持续交付流程，更快，更安全，更可靠地为 Linux 和 Windows Server 上的应用程序提供新功能。
+建议把Docker安装在linux系统上学习使用，如果使用 Windows 可以使用虚拟机安装 Ubuntu 进行学习。
 
-# 在 Ubuntu 上安装 Docker
-建议把Docker安装在linux系统上学习使用，如果使用Windows或者Mac可以使用虚拟机安装Ubuntu进行学习。
-
->补充一点，如果在windows上安装，官方推荐使用 windows 10 专业版，因为这个版本才包含Hyper-V的虚拟化服务，能让docker具有像linux一样的底层兼容性，如果没有使用这个版本，官方建议下载docker tool进行安装。当然还是建议Windows用户装linux虚拟机进行学习。
+补充一点，如果在windows上安装，官方推荐使用 windows 10 专业版，因为这个版本才包含Hyper-V的虚拟化服务，能让docker具有像linux一样的底层兼容性，如果没有使用这个版本，官方建议下载docker tool进行安装。当然还是建议Windows用户装linux虚拟机进行学习。
 
 # Docker 版本说明
 Docker在apt源仓库里面注册了很多名称，比如docker.io，比如docker-engine，这些都不是我们需要的旧版本，新版的Docker就只有两个，一个是社区版本的docker-ce，一个是收费的企业版docker-ee。  
@@ -74,13 +71,33 @@ sudo systemctl restart docker
 
 ```
 ## install
-sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+sudo curl -L https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
 ## update
 docker-compose migrate-to-labels
 ## uninstall
 sudo rm /usr/local/bin/docker-compose
+```
+
+注意：上述命令行安装 1.23.2 版本的，最新版本需要查看 
+
+```
+curl -H 'Accept: application/json' -L https://github.com/docker/compose/releases/latest | jq .
+```
+
+找到 tag_name 字段
+
+```json
+{
+  "id": 14244264,
+  "tag_name": "1.23.2",
+  "update_url": "/docker/compose/releases/tag/1.23.2",
+  "update_authenticity_token": "ruuFEJbQZIdnDBjFGghteL2H6UG6BmliYI18SDLOgnO5hlJlRZB2dDs+qOjkHMamP9bp2ymKrr9Ytao0DtEEiQ==",
+  "delete_url": "/docker/compose/releases/tag/1.23.2",
+  "delete_authenticity_token": "C3JVkok9yjBOrFiNId+amBceStAPLfxm0P1IlXvNLOsdE2gxaZLhR12WsZYYpfMNiZsmHrNmVpf/Z0B2ddUKVw==",
+  "edit_url": "/docker/compose/releases/edit/1.23.2"
+}
 ```
 
 # Docker tips

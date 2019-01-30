@@ -88,11 +88,37 @@ deb-src https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/ubuntu xenial main
 ```
 
 
-## HTTPS 支持
+## 使用 Docker
 
-创建 ssl 目录，并导入证书和私钥。
+配置 docker-compose
 
-这里以 example.crt 和 example.key 为例
+```yml
+version: "3" 
+
+services:
+    gitlab:
+        image: gitlab/gitlab-ce
+        ports:
+            - "80:80"
+            - "443:443"
+            - "2222:2222"
+        volumes:
+            - gitlab-config:/etc/gitlab
+            - gitlab-logs:/var/log/gitlab
+            - gitlab-data:/var/opt/gitlab
+            - $PWD/gitlab.rb:/etc/gitlab/gitlab.rb
+            - $PWD/ssh_config:/etc/ssh/ssh_config
+            - $PWD/sshd_config:/assets/sshd_config
+            - $PWD/ssl:/etc/gitlab/ssl
+volumes:
+    gitlab-config:
+    gitlab-logs:
+    gitlab-data:
+```
+
+这里我们使用了 HTTPS，需要配置一下：
+
+创建 ssl 目录，并导入证书和私钥。这里以 example.crt 和 example.key 为例
 
 ```rb
 # 设置 ssh 端口为 2222
@@ -137,30 +163,4 @@ AuthorizedKeysFile %h/.ssh/authorized_keys /gitlab-data/ssh/authorized_keys
 
 UsePAM yes
 UseDNS no
-```
-
-配置 docker-compose
-
-```yml
-version: "3" 
-
-services:
-    gitlab:
-        image: gitlab/gitlab-ce
-        ports:
-            - "80:80"
-            - "443:443"
-            - "2222:2222"
-        volumes:
-            - gitlab-config:/etc/gitlab
-            - gitlab-logs:/var/log/gitlab
-            - gitlab-data:/var/opt/gitlab
-            - $PWD/gitlab.rb:/etc/gitlab/gitlab.rb
-            - $PWD/ssh_config:/etc/ssh/ssh_config
-            - $PWD/sshd_config:/assets/sshd_config
-            - $PWD/ssl:/etc/gitlab/ssl
-volumes:
-    gitlab-config:
-    gitlab-logs:
-    gitlab-data:
 ```

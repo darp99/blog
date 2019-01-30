@@ -57,5 +57,5 @@ theme: landscape
 
 deploy:
   type: git
-  repo: https://github.com/isLishude/blog
+  repo: git@github.com:isLishude/blog.git
   branch: master

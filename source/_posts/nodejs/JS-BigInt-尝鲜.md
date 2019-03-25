@@ -2,7 +2,6 @@
 title: JS BigInt 尝鲜
 tags:
   - BigInt
-  - ES
 categories:
   - Node.js
 date: 2018-05-19 22:20:54

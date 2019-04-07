@@ -39,7 +39,7 @@ curl -fsSL https://get.docker.com | sudo sh -s --mirror Aliyun
 使用中科大 Docker 镜像源
 
 ```shell
-curl -sSL https://gist.githubusercontent.com/islishude/c590b0a84c9e863686fe328e5c066e2a/raw/c6fcbfb83b4cfae292c5d7c90fcbdec9dbde4eea/set_docker_mirror.sh | sudo sh -s -- https://docker.mirrors.ustc.edu.cn/
+curl -sfSL https://git.io/fjtJn | sudo sh -s -- https://docker.mirrors.ustc.edu.cn/
 
 sudo systemctl restart docker.service
 ```

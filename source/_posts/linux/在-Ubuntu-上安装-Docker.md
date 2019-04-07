@@ -28,16 +28,21 @@ Docker在apt源仓库里面注册了很多名称，比如docker.io，比如docke
 下方命令适用于 Ubuntu 并且软件包源是阿里云的。
 
 ```bash
-curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh --mirror Aliyun
+curl -fsSL https://get.docker.com | sudo sh -s --mirror Aliyun
 ```
 
 安装完之后还需要配置镜像加速。
 
 # 配置国内镜像加速
-同样的道理，使用docker官方的镜像下载服务超级慢。也是daocloud.io的加速服务，一行命令行搞定。这个是我的加速服务地址，当然你也可以用，我建议你在[Daocloud](https://www.daocloud.io/mirror)注册一个新账号然后使用你个人的加速地址。
+~~同样的道理，使用docker官方的镜像下载服务超级慢。也是daocloud.io的加速服务，一行命令行搞定。这个是我的加速服务地址，当然你也可以用，我建议你在[Daocloud](https://www.daocloud.io/mirror)注册一个新账号然后使用你个人的加速地址。~~
 
-`sudo curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://67daa203.m.daocloud.io`  
+使用中科大 Docker 镜像源
+
+```shell
+curl -sSL https://gist.githubusercontent.com/islishude/c590b0a84c9e863686fe328e5c066e2a/raw/c6fcbfb83b4cfae292c5d7c90fcbdec9dbde4eea/set_docker_mirror.sh | sudo sh -s -- https://docker.mirrors.ustc.edu.cn/
+
+sudo systemctl restart docker.service
+```
 
 成功之后，运行`docker pull ubuntu`可以试一试速度。
 
@@ -53,17 +58,13 @@ sudo sh get-docker.sh --mirror Aliyun
 }
 ```
 
-这里使用的 docker 中国镜像源，服务器是其和阿里云合作的。之后重新启动服务。
-
-```
-sudo systemctl daemon-reload
-sudo systemctl restart docker
-```
+这里使用的 docker 中国镜像源，服务器是其和阿里云合作的，之后重新启动服务即可。
 
 # 设置当前用户到docker组
-如果当前用户不是root组，那么是无法直接运行docker命令的，所以在安装完成之后，建议设置当前用户到docker组中。
 
-`sudo gpasswd -a your-user-name docker`
+如果当前用户不是 docker 组，那么是无法直接运行docker命令的，所以在安装完成之后，建议设置当前用户到docker组中。
+
+`sudo usermod -aG docker $USER`
 
 这样做之后，直接可以运行`docker images`等命令再也不需要root权限了。
 
@@ -147,10 +148,3 @@ CMD ["nginx", "-g", "daemon off;", ]
 所以不要在 Dockerfile 中使用 `service xx start` 或者 `systemctl start xx.service`.
 
 对于JS而言，npm run 就是使用的后台命令。比如说在 `npm start` 的命令是 `node index.js` 的话，而 `index.js` 是一个服务器应用，那么在 Docker 中不会成功运行，而且运行之后会自动退出容器。
-
-## 快速下载安装
-
-```bash
-curl -sfSL https://get.docker.com | sudo sh -s --mirror Aliyun
-curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sudo sh -s http://67daa203.m.daocloud.io
-```

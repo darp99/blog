@@ -16,49 +16,13 @@ Docker在apt源仓库里面注册了很多名称，比如docker.io，比如docke
 
 不过，目前（2017年4月7日 17:01:37），ubuntu官方源还没有新版的docker，所以我们可以按照[官方的说明](https://store.docker.com/editions/community/docker-ce-server-ubuntu)，一步一步来安装docker。
 
-# 使用国内源安装
-不过这太慢了，还有可能失败，因为 Docker 的安装资源文件存放在Amazon S3，会间歇性连接失败。所以安装Docker的时候，会比较慢。 这里我推荐使用daocloude的加速服务，高速安装Docker。
-
-`sudo curl -sSL https://get.daocloud.io/docker | sh`
-
-等待大概两分钟就自动安装好了，然后运行`docker -v`，如果出现docker的版本就代表安装好了。
-
-### 使用官方脚本+中国镜像安装
+# 使用官方脚本+中国镜像安装
 
 下方命令适用于 Ubuntu 并且软件包源是阿里云的。
 
 ```bash
-curl -fsSL https://get.docker.com | sudo sh -s --mirror Aliyun
+curl -fsSL https://get.docker.com | sudo sh -s -- -mirror Aliyun
 ```
-
-安装完之后还需要配置镜像加速。
-
-# 配置国内镜像加速
-~~同样的道理，使用docker官方的镜像下载服务超级慢。也是daocloud.io的加速服务，一行命令行搞定。这个是我的加速服务地址，当然你也可以用，我建议你在[Daocloud](https://www.daocloud.io/mirror)注册一个新账号然后使用你个人的加速地址。~~
-
-使用中科大 Docker 镜像源
-
-```shell
-curl -sfSL https://git.io/fjtJn | sudo sh -s -- https://docker.mirrors.ustc.edu.cn/
-
-sudo systemctl restart docker.service
-```
-
-成功之后，运行`docker pull ubuntu`可以试一试速度。
-
-### 手动设置
-
-对于使用` systemd` 的系统，请在 `/etc/docker/daemon.json` 中写入如下内容（如果文件不存在请新建该文件）
-
-```json
-{
-  "registry-mirrors": [
-    "https://registry.docker-cn.com"
-  ]
-}
-```
-
-这里使用的 docker 中国镜像源，服务器是其和阿里云合作的，之后重新启动服务即可。
 
 # 设置当前用户到docker组
 
@@ -67,6 +31,23 @@ sudo systemctl restart docker.service
 `sudo usermod -aG docker $USER`
 
 这样做之后，直接可以运行`docker images`等命令再也不需要root权限了。
+
+# 配置国内镜像加速
+
+使用阿里云 Docker 镜像源
+
+```
+sudo mkdir -p /etc/docker
+sudo tee /etc/docker/daemon.json <<-'EOF'
+{
+  "registry-mirrors": ["https://t9ab0rkd.mirror.aliyuncs.com"]
+}
+EOF
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+```
+
+成功之后，运行`docker pull ubuntu`可以试一试速度。
 
 # docker-compose
 

@@ -21,7 +21,7 @@ Docker在apt源仓库里面注册了很多名称，比如docker.io，比如docke
 下方命令适用于 Ubuntu 并且软件包源是阿里云的。
 
 ```bash
-curl -fsSL https://get.docker.com | sudo sh -s -- -mirror Aliyun
+curl -fsSL https://get.docker.com | sudo sh -s -- --mirror Aliyun
 ```
 
 # 设置当前用户到docker组

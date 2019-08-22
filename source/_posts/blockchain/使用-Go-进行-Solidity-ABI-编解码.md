@@ -2,7 +2,6 @@
 title: 使用 Go 进行 Solidity ABI 编解码
 categories:
   - blockchain
-  - golang
 date: 2019-06-29 09:45:47
 tags:
 ---

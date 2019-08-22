@@ -28,6 +28,14 @@ cd $GOPATH/github.com/islishude/gomodtest
 go mod init
 ```
 
+更新：现在不允许在 GOPATH 下使用 gomod，需要更改成以下命令：
+
+```
+mkdir -p ~/gopher/gomodtest
+cd ~/gopher/gomodtest
+go mod init github.com/islishude/gomodtest
+```
+
 这时可看到目录内多了 go.mod 文件，内容很简单只有两行：
 
 ```

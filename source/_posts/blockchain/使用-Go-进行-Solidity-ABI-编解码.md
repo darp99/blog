@@ -38,40 +38,117 @@ tags:
 package main
 
 import (
+	"encoding/json"
 	"fmt"
+	"math/big"
+	"os"
 	"strings"
 
 	"github.com/ethereum/go-ethereum/accounts/abi"
 	"github.com/ethereum/go-ethereum/common"
 )
 
-const abiraw = `[
+/*
+pragma solidity ^0.6.0;
+
+interface ABI {
+    function List(address owner) external view returns (address[] memory receiver, uint256[] memory values);
+    function Value(address owner) external view returns (uint256 values);
+}
+*/
+
+const RawABI = `[
 	{
-		"constant": false,
 		"inputs": [
 			{
-				"name": "param",
+				"internalType": "address",
+				"name": "owner",
 				"type": "address"
 			}
 		],
-		"name": "addrTy",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
+		"name": "List",
+		"outputs": [
+			{
+				"internalType": "address[]",
+				"name": "receiver",
+				"type": "address[]"
+			},
+			{
+				"internalType": "uint256[]",
+				"name": "values",
+				"type": "uint256[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			}
+		],
+		"name": "Value",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "values",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	}
 ]`
 
 func main() {
-	abi, err := abi.JSON(strings.NewReader(abiraw))
+	parsed, err := abi.JSON(strings.NewReader(RawABI))
 	if err != nil {
 		panic(err)
 	}
-	address := common.HexToAddress("0xca35b7d915458ef540ade6068dfe2f44e8fa733c")
-	out, err := abi.Pack("addrTy", address)
-	if err != nil {
-		panic(err)
+
+	{
+		address := common.HexToAddress("0x80819B3F30e9D77DE6BE3Df9d6EfaA88261DfF9c")
+
+		// Value 参数编码
+		valueInput, err := parsed.Pack("Value", address)
+		if err != nil {
+			panic(err)
+		}
+
+		// Value 参数解码
+		var addrwant common.Address
+		if err := parsed.Methods["Value"].Inputs.Unpack(&addrwant, valueInput[4:]); err != nil {
+			panic(err)
+		}
+		fmt.Println("should equals", addrwant == address)
+
+		// Value 返回值解码
+		var balance *big.Int
+		var returns = common.Hex2Bytes("0000000000000000000000000000000000000000000000000000000005f5e100")
+		if err := parsed.Unpack(&balance, "Value", returns); err != nil {
+			panic(err)
+		}
+		fmt.Println("Value 返回值", balance)
 	}
-	fmt.Printf("%x\n", out[4:])
+
+	// List 返回值编码
+	{
+		// 注意：字段名称需要与 ABI 编码的定义的一致
+		// 比如，这里 ABI 编码返回值第一个为 receiver 那么转化为 Go 就是首字母大写的 Receiver
+		var res struct {
+			Receiver []common.Address // 返回值名称
+			Values   []*big.Int       // 返回值名称
+		}
+
+		// {"Receiver":["0x80819b3f30e9d77de6be3df9d6efaa88261dff9c"],"Values":[10]}
+		raw := common.Hex2Bytes("00000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000100000000000000000000000080819b3f30e9d77de6be3df9d6efaa88261dff9c0000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000a")
+		if err := parsed.Unpack(&res, "List", raw); err != nil {
+			panic(err)
+		}
+		_ = json.NewEncoder(os.Stdout).Encode(&res)
+	}
 }
 ```

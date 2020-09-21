@@ -4,13 +4,14 @@ description: 本博客使用用“保持署名—非商用”创意共享4.0许�
 keywords: blog
 author: islishude
 language: zh_CN
-timezone: UTC+8
+timezone: UTC
 
 url: https://islishude.github.io/blog/
 root: /blog/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
-avatar: /images/avatar.jpg
+profile_link: https://github.com/islishude
+avatar: /images/avatar.png
 twitter: https://twitter.com/eduhsil
 service_worker: false
 

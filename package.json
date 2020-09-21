@@ -1,12 +1,11 @@
 {
-  "name": "hexo-site",
+  "name": "islishude_blog",
   "version": "1.0.0",
   "private": true,
   "hexo": {
     "version": "3.8.0"
   },
   "scripts": {
-    "deps": "npm install --registry=https://registry.npm.taobao.org",
     "pub": "hexo d -g"
   },
   "dependencies": {

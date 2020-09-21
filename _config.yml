@@ -1,15 +1,18 @@
 title: Lishude's Web Note
 subtitle: Node.js/Blockchain/Go
-description: 李书德的网络日志，本博客使用用“保持署名—非商用”创意共享4.0许可证，转载只要保持原作者署名和非商用。
+description: 本博客使用用“保持署名—非商用”创意共享4.0许可证，转载只要保持原作者署名和非商用。
 keywords: blog
-author: Lishude
+author: islishude
 language: zh_CN
-timezone: UTC
+timezone: UTC+8
 
-url:  https://islishude.github.io/blog/
+url: https://islishude.github.io/blog/
 root: /blog/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
+avatar: /images/avatar.jpg
+twitter: https://twitter.com/eduhsil
+service_worker: false
 
 # Directory
 source_dir: source
@@ -36,12 +39,12 @@ highlight:
   line_number: true
   auto_detect: false
   tab_replace:
-  
+
 index_generator:
-  path: ''
+  path: ""
   per_page: 5
   order_by: -date
-  
+
 # Category & Tag
 default_category: uncategorized
 category_map:
@@ -53,7 +56,7 @@ time_format: HH:mm:ss
 per_page: 10
 pagination_dir: page
 
-theme: landscape
+theme: lighttime
 
 deploy:
   type: git

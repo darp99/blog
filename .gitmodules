@@ -1,0 +1,3 @@
+[submodule "themes/lighttime"]
+	path = themes/lighttime
+	url = https://github.com/zker-themes/hexo-theme-lightime
